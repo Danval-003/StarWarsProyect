@@ -1,0 +1,58 @@
+.arrowButton {
+    display: block;
+    position: absolute;
+    background-color: transparent;
+    border: none;
+    width: 40px;
+    height: 40px;
+    z-index: 20;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.arrowButton::before{
+    content: '';
+    width: 45px;
+    height: 45px;
+    position: relative;
+    top: -0px;
+    left:-3px;
+    border-radius: 100%;
+    background-image: url('../../assets/flecha.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 16px;
+    background-position-x: 55%;
+    display: block;
+    background-color: #ffffff9b;
+    border: 2px solid transparent;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.normal{
+    left: 93%;
+}
+
+
+.horizontalInvert{
+    transform: scaleY(-1);
+}
+
+.verticalInvert{
+    top: 45%;
+    transform: scaleX(-1);
+    left: 0%;
+}
+
+
+.isNotAct:hover::before{
+    background-color: #ffffffec; 
+}
+
+.isActive::before {
+    background-color: #ffffffec; 
+}
+
+.isActive:hover::before {
+    background-color: #ffffff9b;
+}

@@ -1,0 +1,47 @@
+@font-face {
+    font-family: 'DINNext';
+    src: url('../../fonts/DINNextLTPro-Medium.woff2') format('woff2'),
+         url('../../fonts/DINNextLTPro-Medium.woff') format('woff');
+  }
+
+.radButton{
+    display: block;
+    width: 210px;
+    height: 48px;
+    background-color: #010100;
+    color: white;
+    border-radius: 24px;
+    font-family: 'DINNext', 'Matterhorn', 'Helvetica', sans-serif;
+    text-transform: uppercase;
+    font-size: 1rem;
+    line-height: 24px;
+    letter-spacing: 0.25px;
+    font-weight: 500;
+    font-style: normal;
+    transition: background-color 0.4s ease-in-out, box-shadow 0.2s ease-in-out, border 0.2s ease-in-out;
+    border: 1px solid #fade4b
+}
+
+.radButton:hover{
+    border: 1px solid white;
+    box-shadow: 0 0 2px 0px white;
+}
+
+.yellowed{
+    border: 1px solid transparent;
+    background-color: #fbdf4b;
+    color: black;
+}
+
+.yellowed:hover{
+    background-color: #f3d24f;
+}
+
+.reded{
+    border: 1px solid transparent;
+    background-color: red;
+}
+
+.reded:hover{
+    background-color: #e80137;
+}
