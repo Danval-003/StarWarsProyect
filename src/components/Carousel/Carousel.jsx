@@ -1,103 +1,80 @@
 import React, { useEffect, useState } from 'react'
 import PropTypes from 'prop-types'
-import Slider from 'react-slick'
-import 'slick-carousel/slick/slick.css'
-import 'slick-carousel/slick/slick-theme.css'
 import ArrowButton from '../ArrowButton'
-import { sliderContainer, carousel } from './Carousel.module.css'
+import { carousel, carouselInner, carouselSlide } from './Carousel.module.css'
 
-const Carousel = ({
-  itemsToShow,
-  edgeDistance,
-  children,
-  infinite,
-  invert,
-  dots,
-}) => {
+const Carousel = ({ children, invert, infinite, timer }) => {
+  const [currentSlide, setCurrentSlide] = useState(0)
   const [isNextArrowActive, setNextArrowActive] = useState(true)
-  const [index, setIndex] = useState(0)
-  const [showedPrev, setShowedPrev] = useState(false)
-  const [showedNext, setShowedNext] = useState(true)
+  const [showPrev, setShowPrev] = useState(false)
+  const [showNext, setShowNext] = useState(true)
+  const [mounted, setMounted] = useState(false)
 
-  const handleInifite = value => {
-    setIndex(index + value)
+  const handleNext = () => {
+    setShowNext(infinite || currentSlide !== children.length - 2)
+    setShowPrev(infinite || currentSlide !== -1)
+    setCurrentSlide(prevSlide =>
+      prevSlide === children.length - 1 ? 0 : prevSlide + 1,
+    )
+  }
+  const handlePrev = () => {
+    setShowNext(infinite || currentSlide !== children.length)
+    setShowPrev(infinite || currentSlide !== 1)
+    setCurrentSlide(prevSlide =>
+      prevSlide === 0 ? children.length - 1 : prevSlide - 1,
+    )
   }
 
   useEffect(() => {
-    console.log(index)
-    setShowedPrev(index !== 0 || infinite)
-    setShowedNext(
-      index !== React.Children.count(children) - itemsToShow || infinite,
-    )
-  }, [index])
+    if (timer) {
+      setInterval(() => handlePrev(), 5000)
+    }
+  }, [mounted])
 
-  const settings = {
-    dots,
-    infinite,
-    speed: 500,
-    slidesToShow: itemsToShow,
-    slidesToScroll: itemsToShow,
-    centerPadding: `${edgeDistance}px ${edgeDistance + 40}px`,
-    nextArrow: (
+  useEffect(() => {
+    setMounted(timer)
+  }, [])
+
+  return (
+    <div className={carousel}>
+      <div
+        className={carouselInner}
+        style={{ transform: `translateX(-${currentSlide * 100}%)` }}
+      >
+        {children.map(child => (
+          <div className={carouselSlide}>{child}</div>
+        ))}
+      </div>
       <ArrowButton
-        onClick={() => handleInifite(itemsToShow)}
+        onClick={handleNext}
         isAct={isNextArrowActive}
         setAct={() => setNextArrowActive(true)}
         invert={invert}
-        show={showedNext}
+        show={showNext || infinite}
       />
-    ),
-    prevArrow: (
       <ArrowButton
-        onClick={() => handleInifite(-itemsToShow)}
+        onClick={handlePrev}
         isAct={!isNextArrowActive}
         setAct={() => setNextArrowActive(false)}
         left
         invert={invert}
-        show={showedPrev}
+        show={showPrev || infinite}
       />
-    ),
-  }
-
-  return (
-    <div
-      className={sliderContainer}
-      style={{
-        width: `${edgeDistance}px`,
-      }}
-    >
-      <Slider
-        dots={settings.dots}
-        infinite={settings.infinite}
-        speed={settings.speed}
-        slidesToShow={settings.slidesToShow}
-        slidesToScroll={settings.slidesToScroll}
-        centerPadding={settings.centerPadding}
-        nextArrow={settings.nextArrow}
-        prevArrow={settings.prevArrow}
-        className={carousel}
-      >
-        {React.Children.map(children, child => (
-          <div>{child}</div>
-        ))}
-      </Slider>
     </div>
   )
 }
 
 Carousel.propTypes = {
-  itemsToShow: PropTypes.number.isRequired,
-  edgeDistance: PropTypes.number.isRequired,
   children: PropTypes.node.isRequired,
   infinite: PropTypes.bool,
   invert: PropTypes.bool,
-  dots: PropTypes.bool,
+  timer: PropTypes.bool,
 }
 
 Carousel.defaultProps = {
-  infinite: true,
-  dots: false,
+  infinite: false,
   invert: false,
+  timer: false,
 }
 
 export default Carousel

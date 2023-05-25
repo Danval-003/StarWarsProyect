@@ -1,0 +1,237 @@
+@font-face {
+    font-family: 'DINNext';
+    src: url('./fonts/DINNextLTPro-Medium.woff2') format('woff2'),
+         url('./fonts/DINNextLTPro-Medium.woff') format('woff');
+}
+
+
+.headerContainer, .bottomContainer, .lastTextContainer{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    width: 100%;
+    height: 138px;
+    background-color: #000000;
+    color: white;
+    justify-content: space-between;
+    margin: 0;
+    font-family: 'DINNext', 'Matterhorn', 'Helvetica', sans-serif;
+    line-height: 1.5;
+    font-weight: 400;
+}
+
+
+
+.lastTextContainer{
+    justify-content: center;
+    align-items: center;
+    top: 177px;
+    height: 35.2px;
+    background-color: #0b0b0a;
+    font-size: 14px;
+    padding: 5px;
+    border-top: 1px solid rgb(112, 112, 112);
+}
+
+.lastTextContainer p{
+    margin-bottom: 10px;
+}
+
+.bottomContainer{
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    top: 138px;
+    height: 39px;
+}
+
+.ulTextBottom{
+    list-style-type: none;
+    margin: 0 auto;
+    display: flex;
+    flex-shrink: 0;
+    align-items: stretch;
+    min-height: 100%;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+}
+
+.ilTexted a{
+    position: relative;
+    min-width: 72px;
+    letter-spacing: 0.25px;
+    font-weight: 500;
+    padding: 0 28px;
+    min-height: 100%;
+    display: inline-block;
+    flex-shrink: 0;
+    text-align: center;
+    text-transform: uppercase;
+    color: #aaa;
+    transition: color 0.2s ease-in-out;
+    color: #B5B7B7;
+    fill: #B5B7B7;
+    padding-bottom: 10px;
+    text-decoration: none;
+}
+
+
+.ilTexted a:hover{
+    color: #fff;
+}
+
+.logoC{
+    height: 80px;
+    border: 0;
+    opacity: 1;
+    transition: opacity 200ms;
+    overflow-clip-margin: content-box;
+    overflow: clip;
+    line-height: 1.2;
+    position: relative;
+    display: block;
+    margin: 29px;
+}
+
+.logoContainer{
+    height: 100%;
+    width: fit-content;
+    vertical-align: bottom;
+    display: flex;
+    flex-direction: column-reverse;
+    position: relative;
+    left: 0;
+    right: 0;
+}
+
+.iconsContainer{
+    width: 280px;
+}
+
+.ulIcons{
+    display: block;
+    width: 100%;
+    list-style-type: none;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+}
+
+.facebook, .instagram, .youtube, .twitter{
+    height: 20px;
+    width: 20px;
+    margin: 0 16px 0 0;
+    padding: 5px;
+    border: 1px transparent solid;
+    vertical-align: bottom;
+    display: inline-block;
+}
+
+.facebook:hover, .instagram:hover, .youtube:hover , .twitter:hover {
+    box-shadow: 0 0 20px rgba(112, 112, 112, 0.5);
+}
+
+.facebook{
+    background-image: url(https://static-mh.content.disney.io/matterhorn/assets/starwars/footer/facebook-0555f4e591a5.svg),linear-gradient(#000, #000);
+    background-position: center, 16px 16px;
+    background-size: 48px, 16px 17px;
+}
+
+.instagram{
+    background-image: url(https://static-mh.content.disney.io/matterhorn/assets/starwars/footer/instagram-777ba125c2e7.svg),linear-gradient(#000, #000);
+    background-position: center, 16px 16px;
+    background-size: 48px, 16px 17px;
+}
+
+.youtube{
+    background-image: url(https://static-mh.content.disney.io/matterhorn/assets/starwars/footer/youtube-a3728986e4b2.svg),linear-gradient(#000, #000);
+    background-position: center, 16px 16px;
+    background-size: 48px, 16px 17px;
+}
+
+.twitter{
+    background-image: url(https://static-mh.content.disney.io/matterhorn/assets/starwars/footer/twitter-071e0eb095b3.svg),linear-gradient(#000, #000);
+    background-position: center, 16px 16px;
+    background-size: 48px, 16px 17px;
+}
+
+.otherSocial{
+    height: 20px;
+    margin: 0 20px -3px 0;
+    padding: 5px;
+    border: 1px transparent solid;
+    vertical-align: bottom;
+    background-size: 48px, 16px 17px;
+    background-position: center;
+    cursor: pointer;
+    display: inline-block;
+    color: rgba(255,255,255,0.86);
+}
+
+.otherSocial::before{
+    content: '';
+    height: 24px;
+    margin: -3px -15px;
+    position: absolute;
+    width: 1px;
+    background: #48494A;
+    display: block;
+}
+
+.buttonsContainer{
+    height: 73px;
+    width: fit-content;
+    margin-right: 94px;
+    right: 0;
+    display: inline-flex;
+}
+
+.searchButton{
+    width: 20px;
+    background: url(https://static-mh.content.disney.io/matterhorn/assets/starwars/navigation/SW_Nav_Search-74ab820c48e2.svg) no-repeat 15px 15px;
+    background-size: 20px;
+    background-position: 50%;
+    margin: 0 8px;
+    position: relative;
+    height: 100%;
+    border: none;
+}
+
+.searchContainer{
+    display: flex;
+    height: 100%;
+    border-radius: 3px;
+    overflow: hidden;
+    width: unset;
+    border: none;
+    color: #aaa;
+}
+
+.searchText{
+    font-size: 1rem;
+    line-height: 1.5rem;
+    font-weight: 500;
+    letter-spacing: 0.25px;
+    color: #fff;
+    cursor: pointer;
+    margin: auto;
+    text-transform: uppercase;
+}
+
+.singButton{
+    width: 20px;
+    background: url(https://static-mh.content.disney.io/matterhorn/assets/starwars/navigation/SW_Oneid_User-85043c6786ab.svg) no-repeat;
+    background-size: 20px;
+    background-position: 50%;
+    margin: 0 8px;
+    position: relative;
+    height: 100%;
+    border: none;
+}

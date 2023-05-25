@@ -44,14 +44,15 @@ module.exports = {
         paths: ['src'],
         extensions: ['.js', '.jsx', '.ts', '.tsx'],
       },
-    },
-    alias: {
-      map: [
-        ['@components', './src/components'],
-        ['@assets', './src/assets'],
-        ['@imageCardsMedium', './src/imagesCards'],
-      ],
-      extensions: ['.js', '.jsx', '.ts', '.tsx'],
+      alias: {
+        map: [
+          ['@components', './src/components'],
+          ['@assets', './src/assets'],
+          ['@imageCardsMedium', './src/imagesCards'],
+          ['@images', './src/images'],
+        ],
+        extensions: ['.js', '.jsx', '.ts', '.tsx'],
+      },
     },
   },
 }

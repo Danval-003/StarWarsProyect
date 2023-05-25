@@ -9,22 +9,46 @@ export default {
   argTypes: {
     infinite: { control: 'boolean' },
     invert: { control: 'boolean' },
-    dots: { control: 'boolean' },
+    itemsToShow: { control: 'number' },
   },
 }
 
+const imageList = () => {
+  const size = imagesTotry.length
+  const listImg = []
+
+  for (let i = 0; i < size; i += 3) {
+    listImg.push(
+      <div
+        style={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(3, 1fr)',
+          height: 'max-content',
+        }}
+      >
+        <StarwarsCard imagen={imagesTotry[i].img} text={imagesTotry[i].text} />
+        <StarwarsCard
+          imagen={imagesTotry[i + 1].img}
+          text={imagesTotry[i + 1].text}
+        />
+        <StarwarsCard
+          imagen={imagesTotry[i + 2].img}
+          text={imagesTotry[i + 2].text}
+        />
+      </div>,
+    )
+  }
+  return listImg
+}
+
 export const Default = () => (
-  <Carousel itemsToShow={3} edgeDistance={1500} infinite={false} invert={false}>
-    {imagesTotry.map(item => (
-      <StarwarsCard imagen={item.img} text={item.text} />
-    ))}
+  <Carousel infinite={false} invert={false}>
+    {imageList().map(value => value)}
   </Carousel>
 )
 
 export const Infinite = () => (
-  <Carousel itemsToShow={3} edgeDistance={1500} infinite invert={false}>
-    {imagesTotry.map(item => (
-      <StarwarsCard imagen={item.img} text={item.text} />
-    ))}
+  <Carousel infinite invert={false}>
+    {imageList().map(value => value)}
   </Carousel>
 )

@@ -1,3 +1,6 @@
-import starwarsCard from './starwarsCard'
+import StarwarsCard from './starwarsCard'
+import Header from './Header/Header'
+import Carousel from './Carousel'
+import RadButton from './RadButton'
 
-export default { starwarsCard }
+export { StarwarsCard, Header, Carousel, RadButton }

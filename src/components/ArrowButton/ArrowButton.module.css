@@ -8,12 +8,19 @@
     z-index: 20;
     top: 50%;
     transform: translateY(-50%);
+    outline: none;
+    outline-color: transparent;
+}
+
+.arrowButton :active{
+    outline: none;
 }
 
 .arrowButton::before{
     content: '';
     width: 45px;
     height: 45px;
+    outline: none;
     position: relative;
     top: -0px;
     left:-3px;
@@ -30,18 +37,21 @@
 }
 
 .normal{
-    left: 93%;
+    right: 45px;
+    outline: none;
 }
 
 
 .horizontalInvert{
+    top: 50%;
     transform: scaleY(-1);
+    right: 45px;
 }
 
 .verticalInvert{
-    top: 45%;
+    top: 50%;
     transform: scaleX(-1);
-    left: 0%;
+    left: 45px;
 }
 
 

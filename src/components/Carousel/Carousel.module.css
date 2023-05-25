@@ -1,33 +1,21 @@
-.carouselContainer {
-    position: relative;
-  }
-  
-  .carousel {
-    overflow: hidden;
-    padding-left: 20px;
-  }
-  
-  .carousel .slick-list {
-    margin: 0;
-    padding: 0;
-  }
-  
-  .carousel .slick-slide > div {
-    outline: none;
-  }
-  
-  .carousel .slick-slide > div:focus {
-    outline: none;
-  }
-  
-
-.sliderContainer{
-    display: flex;
-    width: 100%;
-    position: relative;
-    height: fit-content;
-    justify-content: center;
-    align-items: center;
+.carousel {
+  position: relative;
+  width: 100%;
+  height: fit-content;
+  overflow: hidden;
 }
 
-  
+.carouselInner {
+  width: 100%;
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+.carouselSlide {
+  flex: 0 0 100%;
+  width: 100%;
+}
+
+.carouselSlide.active {
+  transform: translateX(0);
+}

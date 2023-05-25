@@ -1,0 +1,243 @@
+.containCarouselMediumBotton{
+    display: grid;
+    grid-template-columns: 1fr repeat(3, 10fr);
+    height: max-content;
+}
+
+.complement{
+    display: block;
+    width: 1vw;
+}
+
+.containsTop{
+    width: 100%;
+    height: 41vw;
+}
+
+.topCss{
+    width: 100vw;
+    position: absolute;
+    left: 0px;
+    margin: 0px;
+    top: 220px;
+}
+
+.visionsSquare{
+    width: 35vw;
+    height: 23vw;
+    background-color: transparent;
+    display: block;
+    z-index: 1;
+    position: absolute;
+    left: 60vw;
+    margin: 0px;
+    top: 66.4vw;
+}
+
+.visionsSquare p {
+    margin-top: 3%;
+    line-height: 120%;
+}
+
+.visionsSquare div{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mediumCss{
+    width: 100vw;
+    height: fit-content;
+    position: absolute;
+    left: 0px;
+    margin: 0px;
+    top: 57.4vw;
+}
+
+.mediumBottomCss{
+    margin-top: 3%;
+    width: 100vw;
+    height: fit-content;
+    text-align: left;
+}
+
+.textIntro{
+    width: fit-content;
+    position: absolute;
+    margin-left: 6vw;
+    font-size: 23px;
+    color: white;
+}
+
+.textIntro::after{
+    content: '';
+    display: block;
+    position: relative;
+    width: 0.5vw;
+    height: 2px;
+    background-color: rgb(45, 45, 45);
+}
+
+.textIntro::before{
+    content: '';
+    display: block;
+    position: relative;
+    left: 0.7vw;
+    top: 2.4vw;
+    width: 85.4vw;
+    height: 2px;
+    background-color: rgb(45, 45, 45);
+}
+
+.textIntro2{
+    width: fit-content;
+    margin-left: 10%;
+    font-size: 16px;
+    position: absolute;
+    left: 75.5vw;
+    color: white;
+    padding: 11.5px 20px;
+    text-transform: uppercase;
+
+}
+
+.buttonArrow{
+    background-color: transparent;
+    outline: none;
+    border: none;
+    user-select: none;
+    position: absolute;
+    left: 90vw;
+}
+
+.buttonArrow :active{
+    border: none;
+    outline: none;
+    user-select: none;
+}
+
+.buttonArrow svg{
+    fill: white;
+    margin: 0 0;
+    width: 15px;
+    height: 15px;
+    position: relative;
+    bottom: -5px;
+}
+
+.buttonArrow svg:hover{
+    filter: drop-shadow(2px 2px 5px rgb(255, 255, 255));
+}
+
+.iconsContainer{
+    width: 95%;
+    position: relative;
+    top: -2.6vw;
+}
+
+.ulIcons{
+    display: block;
+    width: 100%;
+    list-style-type: none;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+}
+
+.facebook, .instagram, .youtube, .twitter{
+    height: 20px;
+    width: 20px;
+    margin: 0 16px 0 0;
+    padding: 5px;
+    border: 1px transparent solid;
+    vertical-align: bottom;
+    display: inline-block;
+}
+
+.facebook:hover, .instagram:hover, .youtube:hover , .twitter:hover {
+    box-shadow: 0 0 20px rgba(112, 112, 112, 0.5);
+}
+
+.facebook{
+    background-image: url(https://static-mh.content.disney.io/matterhorn/assets/starwars/footer/facebook-0555f4e591a5.svg),linear-gradient(#000, #000);
+    background-position: center, 16px 16px;
+    background-size: 48px, 16px 17px;
+}
+
+.instagram{
+    background-image: url(https://static-mh.content.disney.io/matterhorn/assets/starwars/footer/instagram-777ba125c2e7.svg),linear-gradient(#000, #000);
+    background-position: center, 16px 16px;
+    background-size: 48px, 16px 17px;
+}
+
+.youtube{
+    background-image: url(https://static-mh.content.disney.io/matterhorn/assets/starwars/footer/youtube-a3728986e4b2.svg),linear-gradient(#000, #000);
+    background-position: center, 16px 16px;
+    background-size: 48px, 16px 17px;
+}
+
+.twitter{
+    background-image: url(https://static-mh.content.disney.io/matterhorn/assets/starwars/footer/twitter-071e0eb095b3.svg),linear-gradient(#000, #000);
+    background-position: center, 16px 16px;
+    background-size: 48px, 16px 17px;
+}
+
+.otherSocial{
+    height: 20px;
+    margin: 0 20px -3px 0;
+    padding: 5px;
+    border: 1px transparent solid;
+    vertical-align: bottom;
+    background-size: 48px, 16px 17px;
+    background-position: center;
+    cursor: pointer;
+    display: inline-block;
+    color: rgba(255,255,255,0.86);
+}
+
+.otherSocial::before{
+    content: '';
+    height: 24px;
+    margin: -3px -15px;
+    position: absolute;
+    width: 1px;
+    background: #48494A;
+    display: block;
+}
+
+
+.footer{
+    gap: 20px;
+    width: 80vw;
+    flex-wrap: wrap;
+    position: relative;
+    left: 5vw;
+    margin-bottom: 60px;
+}
+
+.footer p {
+    color: white;
+    flex: auto 0 -1px ;
+    text-decoration-line: underline;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    height: fit-content;
+}
+
+.footer p::after{
+    content: '';
+    display: block;
+    height: 20px;
+    width: 1px;
+    margin-left: 100%;
+    margin-top: 0px;
+    margin-bottom: -30px;
+    position: relative;
+    bottom: 20px;
+    left: 10px;
+    background-color: #48494A;  
+}
+
