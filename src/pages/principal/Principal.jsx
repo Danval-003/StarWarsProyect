@@ -381,7 +381,7 @@ const Principal = () => (
         animation studios
       </p>
       <div>
-      <RadButton type='red' label='Explore' />
+        <RadButton type='red' label='Explore' />
       </div>
     </div>
     <div className={mediumCss}>

@@ -52,6 +52,29 @@ import vision1 from './visions-s2-logo-1_f6f0fa07.png'
 
 const top = [top1, top2, top3, top4]
 
+const toped = [
+  {
+    image: top1,
+    text: 'LEANDRE THOMAS ON "THE PIT"',
+    number: 0,
+  },
+  {
+    image: top2,
+    text: 'CARRIE FISHER - HOLLYWOOD WALK ON FAME',
+    number: 1,
+  },
+  {
+    image: top3,
+    text: 'STAR WARS VISIONS VOLUME 2 IS HERE!',
+    number: 2,
+  },
+  {
+    image: top4,
+    text: 'STAR WARS YOUNG JEDI ADVENTURES IS HERE!',
+    number: 3,
+  },
+]
+
 const topMedium = [
   {
     img: topMedium1,
@@ -155,4 +178,5 @@ export {
   mediumPr,
   mediumPr2,
   vision1,
+  toped,
 }

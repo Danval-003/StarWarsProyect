@@ -1,8 +1,11 @@
 @font-face {
   font-family: 'DINNext';
   src: url('./fonts/DINNextLTPro-Medium.woff2') format('woff2'),
-       url('./fonts/DINNextLTPro-Medium.woff') format('woff');
+       url('./fonts/DINNextLTPro-Medium.woff') format('woff'),
+       url('./fonts/DINNextRoundedLTPro-Bold.woff') format('woff'),
+       url('./fonts/DINNextRoundedLTPro-Bold.woff2') format('woff2');
 }
+
 :root {
   font-family: 'DINNext', 'Matterhorn', 'Helvetica', sans-serif;
   line-height: 1.5;

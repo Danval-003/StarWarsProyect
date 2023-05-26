@@ -30,4 +30,7 @@ export default defineConfig({
       },
     ],
   },
+  build: {
+    base: '/21240/starwars/',
+  },
 })

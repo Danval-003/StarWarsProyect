@@ -1,7 +1,53 @@
 import React, { useEffect, useState } from 'react'
 import PropTypes from 'prop-types'
+import { toped } from '@images'
 import ArrowButton from '../ArrowButton'
-import { carousel, carouselInner, carouselSlide } from './Carousel.module.css'
+import {
+  carousel,
+  carouselInner,
+  carouselSlide,
+  cardsBottom,
+  miniCard,
+  act,
+  acted,
+  bar,
+  cardsBottomed,
+} from './Carousel.module.css'
+
+const CardMonst = ({ slide, setPosition }) => (
+  <div>
+    <div className={cardsBottom}>
+      {toped.map(top => (
+        <div className={`${miniCard} ${top.number === slide ? act : ''}`}>
+          <div className={`${bar} ${top.number === slide ? acted : ''}`} />
+          <img src={top.image} alt='' />
+        </div>
+      ))}
+    </div>
+    <div className={cardsBottomed}>
+      {toped.map(top => (
+        <div
+          className={top.number === slide ? act : ''}
+          onClick={() => setPosition(top.number)}
+          onKeyDown={event => {
+            if (event.key === 'Enter') {
+              setPosition(top.number)
+            }
+          }}
+          role='button'
+          tabIndex={0}
+        >
+          <p>{top.text}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+)
+
+CardMonst.propTypes = {
+  slide: PropTypes.number.isRequired,
+  setPosition: PropTypes.func.isRequired,
+}
 
 const Carousel = ({ children, invert, infinite, timer }) => {
   const [currentSlide, setCurrentSlide] = useState(0)
@@ -27,7 +73,12 @@ const Carousel = ({ children, invert, infinite, timer }) => {
 
   useEffect(() => {
     if (timer) {
-      setInterval(() => handlePrev(), 5000)
+      const movedInterval = setInterval(() => {
+        handlePrev()
+        if (!isNextArrowActive || !timer) {
+          clearInterval(movedInterval)
+        }
+      }, 5000)
     }
   }, [mounted])
 
@@ -60,6 +111,14 @@ const Carousel = ({ children, invert, infinite, timer }) => {
         invert={invert}
         show={showPrev || infinite}
       />
+      {timer ? (
+        <CardMonst
+          slide={currentSlide}
+          setPosition={value => {
+            setCurrentSlide(value)
+          }}
+        />
+      ) : null}
     </div>
   )
 }
