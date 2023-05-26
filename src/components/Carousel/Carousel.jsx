@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useRef } from 'react'
 import PropTypes from 'prop-types'
 import { toped } from '@images'
 import ArrowButton from '../ArrowButton'
@@ -54,7 +54,6 @@ const Carousel = ({ children, invert, infinite, timer }) => {
   const [isNextArrowActive, setNextArrowActive] = useState(true)
   const [showPrev, setShowPrev] = useState(false)
   const [showNext, setShowNext] = useState(true)
-  const [mounted, setMounted] = useState(false)
 
   const handleNext = () => {
     setShowNext(infinite || currentSlide !== children.length - 2)
@@ -71,19 +70,18 @@ const Carousel = ({ children, invert, infinite, timer }) => {
     )
   }
 
-  useEffect(() => {
-    if (timer) {
-      const movedInterval = setInterval(() => {
-        handlePrev()
-        if (!isNextArrowActive || !timer) {
-          clearInterval(movedInterval)
-        }
-      }, 5000)
-    }
-  }, [mounted])
+  const intervalRef = useRef(null)
 
   useEffect(() => {
-    setMounted(timer)
+    if (timer) {
+      intervalRef.current = setInterval(() => {
+        handleNext()
+      }, 5000)
+    }
+
+    return () => {
+      clearInterval(intervalRef.current) // Limpiar el intervalo al desmontar el componente
+    }
   }, [])
 
   return (
